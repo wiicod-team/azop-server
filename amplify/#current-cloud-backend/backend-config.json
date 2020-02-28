@@ -1,0 +1,8 @@
+{
+	"auth": {
+		"azopserverd7be190a": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
