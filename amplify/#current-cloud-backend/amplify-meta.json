@@ -8,18 +8,19 @@
 			"DeploymentBucketName": "azop-server-worldev-20200206190858-deployment",
 			"UnauthRoleName": "azop-server-worldev-20200206190858-unauthRole",
 			"StackName": "azop-server-worldev-20200206190858",
-			"StackId": "arn:aws:cloudformation:us-east-1:851610601300:stack/azop-server-worldev-20200206190858/c686eaa0-490b-11ea-a8c5-12c270bd7978"
+			"StackId": "arn:aws:cloudformation:us-east-1:851610601300:stack/azop-server-worldev-20200206190858/c686eaa0-490b-11ea-a8c5-12c270bd7978",
+			"AmplifyAppId": "dafiqaqd25sx0"
+		},
+		"categories": {
+			"auth": {
+				"azopserverd7be190a": {}
+			}
 		}
 	},
 	"auth": {
 		"azopserverd7be190a": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/auth/azopserverd7be190a-cloudformation-template.yml",
-				"logicalId": "authazopserverd7be190a"
-			},
-			"lastPushTimeStamp": "2020-02-07T07:55:46.636Z",
 			"output": {
 				"AppClientSecret": "17mdks297orot1h1q0puq11sm799muh005n607bmoes8fllndeb8",
 				"UserPoolId": "us-east-1_JQ6wC4CY3",
@@ -29,7 +30,38 @@
 				"IdentityPoolName": "azopserverd7be190a_identitypool_d7be190a__worldev",
 				"UserPoolName": "azopserverd7be190a_userpool_d7be190a"
 			},
-			"lastPushDirHash": "+xuIGtOpAdPPIbQE49g2Jk0skKE="
+			"lastPushTimeStamp": "2020-04-04T18:27:03.320Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/auth/azopserverd7be190a-cloudformation-template.yml",
+				"logicalId": "authazopserverd7be190a"
+			},
+			"dependsOn": [],
+			"lastPushDirHash": "AYlxaeFSXkcvYLCewwx7CfAm1kc="
+		}
+	},
+	"api": {
+		"azopserver": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authazopserverd7be190a"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "dtt3tensefcwlemnu5ulhbgzca",
+				"GraphQLAPIEndpointOutput": "https://wewo5p46djdyhi5uiyaqst4uue.appsync-api.us-east-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiazopserver"
+			},
+			"lastPushTimeStamp": "2020-04-04T18:27:25.045Z",
+			"lastPushDirHash": "wxGOg3ikrRiqLdDT+TQkliqmNz8="
 		}
 	}
 }
