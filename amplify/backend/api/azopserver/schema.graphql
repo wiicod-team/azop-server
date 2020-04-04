@@ -1,0 +1,202 @@
+type Suggestion 
+  @model 
+  @auth(rules: [
+      {allow: owner},
+      {allow: groups, groups: ["Users"], operations: [read]}
+    ])
+{
+  id: ID!
+  user: User!
+  title: String!
+  description: String!
+  status: String
+  suggestionscol: String!
+}
+
+type User 
+  @model 
+  @auth(rules: [
+      {allow: owner, operations: [read, update, delete]},
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  first_name: String
+  last_name: String
+  avatar: String
+  suggestions: [Suggestion]
+  tribes: [Tribe]
+}
+
+type Tribe
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  name: String!
+  symbol: String
+  description: String
+  localization: String
+  tribescol: String
+  tribes: [Tribe]
+  users: [User]
+  customs: [Custom]
+  proverbs: [Proverb]
+  sons: [Son]
+  languages: [Language]
+  names: [Name]
+}
+
+type Custom 
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Users"], operations: [read]},
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  tribe: Tribe!
+  title: String!
+  description: String
+}
+
+type Proverb 
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Users"], operations: [read]},
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  tribe: Tribe!
+  title: String!
+  meaning: String!
+  content: String!
+  track: String
+}
+
+type Son 
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Users"], operations: [read]},
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  tribe: Tribe!
+  title: String!
+  lyric: String!
+  sons: String!
+}
+
+type Legend 
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Users"], operations: [read]},
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  name: String!
+  surname: String!
+  birthdate: String!
+  picture: String!
+  tribes: [Tribe]
+  histories: [History]
+}
+
+type History
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  title: String!
+  content: String!
+  start_at: String
+  end_at: String
+  legends: [Legend]
+}
+
+type Name
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  name: String!
+  gender: String!
+  signification: String!
+}
+
+type Language
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Users"]}
+    ])
+{
+  id: ID!
+  name: String!
+  description: String!
+  questions: [Question]
+  alphabets: [Alphabet]
+  dictionaries: [Dictionary]
+  sentences: [Sentence]
+}
+
+type Question
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Users"]}
+    ])
+{
+  id: ID!
+  question_template: String!
+  answers: String!
+  status: String!
+  questionscol: String!
+  language: Language!
+}
+
+type Alphabet
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  symbols: String!
+  sons: String!
+  order: String!
+  language: Language!
+}
+
+type Dictionary
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  name: String!
+  words: String!
+  language: Language!
+}
+
+type Sentence
+  @model 
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"]}
+    ])
+{
+  id: ID!
+  sentence: String!
+  translations: String!
+  track: String!
+  sentencescol: String!
+  language: Language!
+}
