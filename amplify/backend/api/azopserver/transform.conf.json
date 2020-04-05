@@ -5,5 +5,6 @@
             "ConflictHandler": "OPTIMISTIC_CONCURRENCY",
             "ConflictDetection": "VERSION"
         }
-    }
+    },
+    "ElasticsearchWarning": true
 }

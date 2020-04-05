@@ -35,7 +35,6 @@ type TribeUser {
 
 type Tribe
 @model
-@key(name: "byTribe", fields: ["id", "name", "symbol", "description", "localization"])
 @auth(rules: [
     {allow: groups, groups: ["Admins"]}
 ]) {
@@ -137,6 +136,7 @@ type Question
 }
 
 type Answer {
+    id: ID!
     status:ANSWER_STATUS
     type:QUESTION_TYPE!
     title:String!
@@ -213,14 +213,14 @@ type History {
 # ===================================================assets types===================================
 
 type GeoPosition{
-    lat:Float!
-    long:Float!
+    lat: Float!
+    long: Float!
 }
 
 type File{
-    type:FILE_TYPE
-    url:String
-    size:Float
+    type: FILE_TYPE
+    url: String
+    size: Float
 }
 
 #==========================================enum=====================================
