@@ -30,7 +30,7 @@
 				"IdentityPoolName": "azopserverd7be190a_identitypool_d7be190a__worldev",
 				"UserPoolName": "azopserverd7be190a_userpool_d7be190a"
 			},
-			"lastPushTimeStamp": "2020-04-04T18:27:03.320Z",
+			"lastPushTimeStamp": "2020-04-06T20:32:41.685Z",
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/auth/azopserverd7be190a-cloudformation-template.yml",
 				"logicalId": "authazopserverd7be190a"
@@ -60,8 +60,8 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiazopserver"
 			},
-			"lastPushTimeStamp": "2020-04-04T18:27:25.045Z",
-			"lastPushDirHash": "wxGOg3ikrRiqLdDT+TQkliqmNz8="
+			"lastPushTimeStamp": "2020-04-06T20:33:00.201Z",
+			"lastPushDirHash": "EUS5Rw/hfdy8zeIRyq3oW9GOViA="
 		}
 	}
 }

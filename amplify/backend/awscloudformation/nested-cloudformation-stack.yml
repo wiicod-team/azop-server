@@ -142,7 +142,7 @@
 						]
 					},
 					"S3DeploymentBucket": "azop-server-worldev-20200206190858-deployment",
-					"S3DeploymentRootKey": "amplify-appsync-files/0939cba8cd43633b802b1c3c281db4c371d84f3e",
+					"S3DeploymentRootKey": "amplify-appsync-files/59c6b858c620a62ecbaea8516aea06d7bdd89f66",
 					"env": "worldev"
 				}
 			}

@@ -1,125 +1,7 @@
 // tslint:disable
+// eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const syncSuggestions = /* GraphQL */ `
-  query SyncSuggestions(
-    $filter: ModelSuggestionFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSuggestions(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        user {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        title
-        description
-        status
-        suggestionscol
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getSuggestion = /* GraphQL */ `
-  query GetSuggestion($id: ID!) {
-    getSuggestion(id: $id) {
-      id
-      user {
-        id
-        first_name
-        last_name
-        avatar
-        suggestions {
-          id
-          title
-          description
-          status
-          suggestionscol
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      title
-      description
-      status
-      suggestionscol
-      _version
-      _deleted
-      _lastChangedAt
-      owner
-    }
-  }
-`;
-export const listSuggestions = /* GraphQL */ `
-  query ListSuggestions(
-    $filter: ModelSuggestionFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSuggestions(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        user {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        title
-        description
-        status
-        suggestionscol
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
 export const syncUsers = /* GraphQL */ `
   query SyncUsers(
     $filter: ModelUserFilterInput
@@ -135,31 +17,71 @@ export const syncUsers = /* GraphQL */ `
     ) {
       items {
         id
-        first_name
-        last_name
+        firstName
+        lastName
         avatar
         suggestions {
           id
           title
           description
           status
-          suggestionscol
+          createdAt
+          updatedAt
+        }
+        tribes {
+          id
+          tribeId
+          userId
+          tribeName
+          userName
+          role
+          createdAt
+          updatedAt
+        }
+        questions {
+          id
+          title
+          type
+          asset {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
+          languageID
+          question_template
+          answers {
+            id
+            status
+            type
+            title
+            vote
+            createdAt
+            updatedAt
+          }
+          status
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
           owner
         }
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
@@ -174,106 +96,115 @@ export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
       id
-      first_name
-      last_name
+      firstName
+      lastName
       avatar
       suggestions {
         id
+        title
+        description
+        status
+        createdAt
+        updatedAt
+      }
+      tribes {
+        id
+        tribeId
+        userId
+        tribeName
+        userName
+        role
+        createdAt
+        updatedAt
+      }
+      questions {
+        id
+        title
+        type
+        asset {
+          type
+          url
+          size
+          createdAt
+          updatedAt
+        }
+        languageID
+        question_template
+        answers {
+          id
+          status
+          type
+          title
+          vote
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
+        }
+        status
         user {
           id
-          first_name
-          last_name
+          firstName
+          lastName
           avatar
+          suggestions {
+            id
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
           owner
         }
-        title
-        description
-        status
-        suggestionscol
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
         owner
       }
-      tribes {
-        id
-        name
-        symbol
-        description
-        localization
-        tribescol
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        users {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        customs {
-          id
-          title
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        proverbs {
-          id
-          title
-          meaning
-          content
-          track
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sons {
-          id
-          title
-          lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        names {
-          id
-          name
-          gender
-          signification
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
@@ -290,31 +221,71 @@ export const listUsers = /* GraphQL */ `
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        first_name
-        last_name
+        firstName
+        lastName
         avatar
         suggestions {
           id
           title
           description
           status
-          suggestionscol
+          createdAt
+          updatedAt
+        }
+        tribes {
+          id
+          tribeId
+          userId
+          tribeName
+          userName
+          role
+          createdAt
+          updatedAt
+        }
+        questions {
+          id
+          title
+          type
+          asset {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
+          languageID
+          question_template
+          answers {
+            id
+            status
+            type
+            title
+            vote
+            createdAt
+            updatedAt
+          }
+          status
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
           owner
         }
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
@@ -341,75 +312,236 @@ export const syncTribes = /* GraphQL */ `
       items {
         id
         name
-        symbol
+        symbol {
+          type
+          url
+          size
+          createdAt
+          updatedAt
+        }
         description
-        localization
-        tribescol
+        country {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        localization {
+          lat
+          long
+          createdAt
+          updatedAt
+        }
         tribes {
           id
           name
-          symbol
+          symbol {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
           description
-          localization
-          tribescol
+          country {
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          localization {
+            lat
+            long
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            name
+            description
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          users {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          customs {
+            id
+            tribeID
+            type
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          proverbs {
+            id
+            tribeID
+            title
+            meaning
+            content
+            track
+            createdAt
+            updatedAt
+          }
+          songs {
+            id
+            tribeID
+            title
+            lyric
+            songs
+            createdAt
+            updatedAt
+          }
+          names {
+            id
+            tribeID
+            name
+            gender
+            signification
+            createdAt
+            updatedAt
+          }
+          languages {
+            id
+            tribeID
+            name
+            description
+            createdAt
+            updatedAt
+          }
+          legends {
+            id
+            name
+            surname
+            birthdate
+            picture
+            tribeIds
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
         }
         users {
           id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          tribeId
+          userId
+          tribeName
+          userName
+          role
+          createdAt
+          updatedAt
         }
         customs {
           id
+          tribeID
+          type
           title
           description
-          _version
-          _deleted
-          _lastChangedAt
+          status
+          createdAt
+          updatedAt
         }
         proverbs {
           id
+          tribeID
           title
           meaning
           content
           track
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
-        sons {
+        songs {
           id
+          tribeID
           title
           lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
+          songs
+          createdAt
+          updatedAt
         }
         names {
           id
+          tribeID
           name
           gender
           signification
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
+        languages {
+          id
+          tribeID
+          name
+          description
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          alphabets {
+            id
+            languageID
+            createdAt
+            updatedAt
+          }
+          dictionaries {
+            id
+            languageID
+            name
+            createdAt
+            updatedAt
+          }
+          sentences {
+            id
+            languageID
+            languageName
+            title
+            translations
+            track
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        legends {
+          id
+          name
+          surname
+          birthdate
+          picture
+          tribeIds
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
@@ -424,232 +556,410 @@ export const getTribe = /* GraphQL */ `
     getTribe(id: $id) {
       id
       name
-      symbol
+      symbol {
+        type
+        url
+        size
+        createdAt
+        updatedAt
+      }
       description
-      localization
-      tribescol
+      country {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      localization {
+        lat
+        long
+        createdAt
+        updatedAt
+      }
       tribes {
         id
         name
-        symbol
+        symbol {
+          type
+          url
+          size
+          createdAt
+          updatedAt
+        }
         description
-        localization
-        tribescol
+        country {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        localization {
+          lat
+          long
+          createdAt
+          updatedAt
+        }
         tribes {
           id
           name
-          symbol
+          symbol {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
           description
-          localization
-          tribescol
+          country {
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          localization {
+            lat
+            long
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            name
+            description
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          users {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          customs {
+            id
+            tribeID
+            type
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          proverbs {
+            id
+            tribeID
+            title
+            meaning
+            content
+            track
+            createdAt
+            updatedAt
+          }
+          songs {
+            id
+            tribeID
+            title
+            lyric
+            songs
+            createdAt
+            updatedAt
+          }
+          names {
+            id
+            tribeID
+            name
+            gender
+            signification
+            createdAt
+            updatedAt
+          }
+          languages {
+            id
+            tribeID
+            name
+            description
+            createdAt
+            updatedAt
+          }
+          legends {
+            id
+            name
+            surname
+            birthdate
+            picture
+            tribeIds
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
         }
         users {
           id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          tribeId
+          userId
+          tribeName
+          userName
+          role
+          createdAt
+          updatedAt
         }
         customs {
           id
+          tribeID
+          type
           title
           description
-          _version
-          _deleted
-          _lastChangedAt
+          status
+          createdAt
+          updatedAt
         }
         proverbs {
           id
+          tribeID
           title
           meaning
           content
           track
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
-        sons {
+        songs {
           id
+          tribeID
           title
           lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
+          songs
+          createdAt
+          updatedAt
         }
         names {
           id
+          tribeID
           name
           gender
           signification
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
+        languages {
+          id
+          tribeID
+          name
+          description
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          alphabets {
+            id
+            languageID
+            createdAt
+            updatedAt
+          }
+          dictionaries {
+            id
+            languageID
+            name
+            createdAt
+            updatedAt
+          }
+          sentences {
+            id
+            languageID
+            languageName
+            title
+            translations
+            track
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        legends {
+          id
+          name
+          surname
+          birthdate
+          picture
+          tribeIds
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
       }
       users {
         id
-        first_name
-        last_name
-        avatar
-        suggestions {
+        tribeId
+        userId
+        tribeName
+        userName
+        role
+        createdAt
+        updatedAt
+      }
+      customs {
+        id
+        tribeID
+        type
+        title
+        description
+        status
+        createdAt
+        updatedAt
+      }
+      proverbs {
+        id
+        tribeID
+        title
+        meaning
+        content
+        track
+        createdAt
+        updatedAt
+      }
+      songs {
+        id
+        tribeID
+        title
+        lyric
+        songs
+        createdAt
+        updatedAt
+      }
+      names {
+        id
+        tribeID
+        name
+        gender
+        signification
+        createdAt
+        updatedAt
+      }
+      languages {
+        id
+        tribeID
+        name
+        description
+        questions {
           id
           title
-          description
+          type
+          asset {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
+          languageID
+          question_template
+          answers {
+            id
+            status
+            type
+            title
+            vote
+            createdAt
+            updatedAt
+          }
           status
-          suggestionscol
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
           owner
         }
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      customs {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        description
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      proverbs {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        meaning
-        content
-        track
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      sons {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        lyric
-        sons
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      languages {
-        id
-        name
-        description
-        questions {
-          id
-          question_template
-          answers
-          status
-          questionscol
-          _version
-          _deleted
-          _lastChangedAt
-        }
         alphabets {
           id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
+          languageID
+          letters {
+            id
+            symbol
+            order
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
         }
         dictionaries {
           id
+          languageID
           name
-          words
-          _version
-          _deleted
-          _lastChangedAt
+          words {
+            id
+            title
+            meaning
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
         }
         sentences {
           id
-          sentence
+          languageID
+          languageName
+          title
           translations
           track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
-        _version
-        _deleted
-        _lastChangedAt
+        createdAt
+        updatedAt
       }
-      names {
+      legends {
         id
         name
-        gender
-        signification
-        _version
-        _deleted
-        _lastChangedAt
+        surname
+        birthdate
+        picture
+        tribeIds
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
@@ -666,1131 +976,236 @@ export const listTribes = /* GraphQL */ `
       items {
         id
         name
-        symbol
+        symbol {
+          type
+          url
+          size
+          createdAt
+          updatedAt
+        }
         description
-        localization
-        tribescol
+        country {
+          id
+          name
+          createdAt
+          updatedAt
+        }
+        localization {
+          lat
+          long
+          createdAt
+          updatedAt
+        }
         tribes {
           id
           name
-          symbol
+          symbol {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
           description
-          localization
-          tribescol
+          country {
+            id
+            name
+            createdAt
+            updatedAt
+          }
+          localization {
+            lat
+            long
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            name
+            description
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+          }
+          users {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          customs {
+            id
+            tribeID
+            type
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          proverbs {
+            id
+            tribeID
+            title
+            meaning
+            content
+            track
+            createdAt
+            updatedAt
+          }
+          songs {
+            id
+            tribeID
+            title
+            lyric
+            songs
+            createdAt
+            updatedAt
+          }
+          names {
+            id
+            tribeID
+            name
+            gender
+            signification
+            createdAt
+            updatedAt
+          }
+          languages {
+            id
+            tribeID
+            name
+            description
+            createdAt
+            updatedAt
+          }
+          legends {
+            id
+            name
+            surname
+            birthdate
+            picture
+            tribeIds
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
         }
         users {
           id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          tribeId
+          userId
+          tribeName
+          userName
+          role
+          createdAt
+          updatedAt
         }
         customs {
           id
+          tribeID
+          type
           title
           description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        proverbs {
-          id
-          title
-          meaning
-          content
-          track
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sons {
-          id
-          title
-          lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        names {
-          id
-          name
-          gender
-          signification
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncCustoms = /* GraphQL */ `
-  query SyncCustoms(
-    $filter: ModelCustomFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncCustoms(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        description
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getCustom = /* GraphQL */ `
-  query GetCustom($id: ID!) {
-    getCustom(id: $id) {
-      id
-      tribe {
-        id
-        name
-        symbol
-        description
-        localization
-        tribescol
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        users {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        customs {
-          id
-          title
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        proverbs {
-          id
-          title
-          meaning
-          content
-          track
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sons {
-          id
-          title
-          lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        names {
-          id
-          name
-          gender
-          signification
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      title
-      description
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listCustoms = /* GraphQL */ `
-  query ListCustoms(
-    $filter: ModelCustomFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCustoms(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        description
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncProverbs = /* GraphQL */ `
-  query SyncProverbs(
-    $filter: ModelProverbFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncProverbs(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        meaning
-        content
-        track
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getProverb = /* GraphQL */ `
-  query GetProverb($id: ID!) {
-    getProverb(id: $id) {
-      id
-      tribe {
-        id
-        name
-        symbol
-        description
-        localization
-        tribescol
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        users {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        customs {
-          id
-          title
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        proverbs {
-          id
-          title
-          meaning
-          content
-          track
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sons {
-          id
-          title
-          lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        names {
-          id
-          name
-          gender
-          signification
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      title
-      meaning
-      content
-      track
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listProverbs = /* GraphQL */ `
-  query ListProverbs(
-    $filter: ModelProverbFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listProverbs(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        meaning
-        content
-        track
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncSons = /* GraphQL */ `
-  query SyncSons(
-    $filter: ModelSonFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSons(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        lyric
-        sons
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getSon = /* GraphQL */ `
-  query GetSon($id: ID!) {
-    getSon(id: $id) {
-      id
-      tribe {
-        id
-        name
-        symbol
-        description
-        localization
-        tribescol
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        users {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        customs {
-          id
-          title
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        proverbs {
-          id
-          title
-          meaning
-          content
-          track
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sons {
-          id
-          title
-          lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        names {
-          id
-          name
-          gender
-          signification
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      title
-      lyric
-      sons
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listSons = /* GraphQL */ `
-  query ListSons(
-    $filter: ModelSonFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSons(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        tribe {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        title
-        lyric
-        sons
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncLegends = /* GraphQL */ `
-  query SyncLegends(
-    $filter: ModelLegendFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncLegends(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        surname
-        birthdate
-        picture
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        histories {
-          id
-          title
-          content
-          start_at
-          end_at
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getLegend = /* GraphQL */ `
-  query GetLegend($id: ID!) {
-    getLegend(id: $id) {
-      id
-      name
-      surname
-      birthdate
-      picture
-      tribes {
-        id
-        name
-        symbol
-        description
-        localization
-        tribescol
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        users {
-          id
-          first_name
-          last_name
-          avatar
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
-        customs {
-          id
-          title
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        proverbs {
-          id
-          title
-          meaning
-          content
-          track
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sons {
-          id
-          title
-          lyric
-          sons
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        languages {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        names {
-          id
-          name
-          gender
-          signification
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      histories {
-        id
-        title
-        content
-        start_at
-        end_at
-        legends {
-          id
-          name
-          surname
-          birthdate
-          picture
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listLegends = /* GraphQL */ `
-  query ListLegends(
-    $filter: ModelLegendFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLegends(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        surname
-        birthdate
-        picture
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        histories {
-          id
-          title
-          content
-          start_at
-          end_at
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncHistories = /* GraphQL */ `
-  query SyncHistories(
-    $filter: ModelHistoryFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncHistories(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        title
-        content
-        start_at
-        end_at
-        legends {
-          id
-          name
-          surname
-          birthdate
-          picture
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getHistory = /* GraphQL */ `
-  query GetHistory($id: ID!) {
-    getHistory(id: $id) {
-      id
-      title
-      content
-      start_at
-      end_at
-      legends {
-        id
-        name
-        surname
-        birthdate
-        picture
-        tribes {
-          id
-          name
-          symbol
-          description
-          localization
-          tribescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        histories {
-          id
-          title
-          content
-          start_at
-          end_at
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listHistorys = /* GraphQL */ `
-  query ListHistorys(
-    $filter: ModelHistoryFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listHistorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        title
-        content
-        start_at
-        end_at
-        legends {
-          id
-          name
-          surname
-          birthdate
-          picture
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncNames = /* GraphQL */ `
-  query SyncNames(
-    $filter: ModelNameFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncNames(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        gender
-        signification
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getName = /* GraphQL */ `
-  query GetName($id: ID!) {
-    getName(id: $id) {
-      id
-      name
-      gender
-      signification
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listNames = /* GraphQL */ `
-  query ListNames(
-    $filter: ModelNameFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listNames(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        gender
-        signification
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncLanguages = /* GraphQL */ `
-  query SyncLanguages(
-    $filter: ModelLanguageFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncLanguages(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        description
-        questions {
-          id
-          question_template
-          answers
           status
-          questionscol
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
-        alphabets {
+        proverbs {
           id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        dictionaries {
-          id
-          name
-          words
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sentences {
-          id
-          sentence
-          translations
+          tribeID
+          title
+          meaning
+          content
           track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
+          createdAt
+          updatedAt
         }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getLanguage = /* GraphQL */ `
-  query GetLanguage($id: ID!) {
-    getLanguage(id: $id) {
-      id
-      name
-      description
-      questions {
-        id
-        question_template
-        answers
-        status
-        questionscol
-        language {
+        songs {
           id
+          tribeID
+          title
+          lyric
+          songs
+          createdAt
+          updatedAt
+        }
+        names {
+          id
+          tribeID
+          name
+          gender
+          signification
+          createdAt
+          updatedAt
+        }
+        languages {
+          id
+          tribeID
           name
           description
-          _version
-          _deleted
-          _lastChangedAt
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          alphabets {
+            id
+            languageID
+            createdAt
+            updatedAt
+          }
+          dictionaries {
+            id
+            languageID
+            name
+            createdAt
+            updatedAt
+          }
+          sentences {
+            id
+            languageID
+            languageName
+            title
+            translations
+            track
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
         }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      alphabets {
-        id
-        symbols
-        sons
-        order
-        language {
+        legends {
           id
           name
-          description
-          _version
-          _deleted
-          _lastChangedAt
+          surname
+          birthdate
+          picture
+          tribeIds
+          createdAt
+          updatedAt
         }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      dictionaries {
-        id
-        name
-        words
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      sentences {
-        id
-        sentence
-        translations
-        track
-        sentencescol
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listLanguages = /* GraphQL */ `
-  query ListLanguages(
-    $filter: ModelLanguageFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLanguages(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        questions {
-          id
-          question_template
-          answers
-          status
-          questionscol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        alphabets {
-          id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        dictionaries {
-          id
-          name
-          words
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sentences {
-          id
-          sentence
-          translations
-          track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
@@ -1815,21 +1230,89 @@ export const syncQuestions = /* GraphQL */ `
     ) {
       items {
         id
+        title
+        type
+        asset {
+          type
+          url
+          size
+          createdAt
+          updatedAt
+        }
+        languageID
         question_template
-        answers
-        status
-        questionscol
-        language {
+        answers {
           id
-          name
-          description
+          status
+          type
+          title
+          vote
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
+        }
+        status
+        user {
+          id
+          firstName
+          lastName
+          avatar
+          suggestions {
+            id
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
+          owner
         }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt
@@ -1840,58 +1323,149 @@ export const getQuestion = /* GraphQL */ `
   query GetQuestion($id: ID!) {
     getQuestion(id: $id) {
       id
+      title
+      type
+      asset {
+        type
+        url
+        size
+        createdAt
+        updatedAt
+      }
+      languageID
       question_template
-      answers
-      status
-      questionscol
-      language {
+      answers {
         id
-        name
-        description
+        status
+        type
+        title
+        vote
+        user {
+          id
+          firstName
+          lastName
+          avatar
+          suggestions {
+            id
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      user {
+        id
+        firstName
+        lastName
+        avatar
+        suggestions {
+          id
+          title
+          description
+          status
+          createdAt
+          updatedAt
+        }
+        tribes {
+          id
+          tribeId
+          userId
+          tribeName
+          userName
+          role
+          createdAt
+          updatedAt
+        }
         questions {
           id
+          title
+          type
+          asset {
+            type
+            url
+            size
+            createdAt
+            updatedAt
+          }
+          languageID
           question_template
-          answers
+          answers {
+            id
+            status
+            type
+            title
+            vote
+            createdAt
+            updatedAt
+          }
           status
-          questionscol
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
+          owner
         }
-        alphabets {
-          id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        dictionaries {
-          id
-          name
-          words
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sentences {
-          id
-          sentence
-          translations
-          track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
+        owner
       }
+      createdAt
+      updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -1904,387 +1478,89 @@ export const listQuestions = /* GraphQL */ `
     listQuestions(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        title
+        type
+        asset {
+          type
+          url
+          size
+          createdAt
+          updatedAt
+        }
+        languageID
         question_template
-        answers
+        answers {
+          id
+          status
+          type
+          title
+          vote
+          user {
+            id
+            firstName
+            lastName
+            avatar
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
+        }
         status
-        questionscol
-        language {
+        user {
           id
-          name
-          description
+          firstName
+          lastName
+          avatar
+          suggestions {
+            id
+            title
+            description
+            status
+            createdAt
+            updatedAt
+          }
+          tribes {
+            id
+            tribeId
+            userId
+            tribeName
+            userName
+            role
+            createdAt
+            updatedAt
+          }
+          questions {
+            id
+            title
+            type
+            languageID
+            question_template
+            status
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            owner
+          }
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
+          owner
         }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncAlphabets = /* GraphQL */ `
-  query SyncAlphabets(
-    $filter: ModelAlphabetFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncAlphabets(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        symbols
-        sons
-        order
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getAlphabet = /* GraphQL */ `
-  query GetAlphabet($id: ID!) {
-    getAlphabet(id: $id) {
-      id
-      symbols
-      sons
-      order
-      language {
-        id
-        name
-        description
-        questions {
-          id
-          question_template
-          answers
-          status
-          questionscol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        alphabets {
-          id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        dictionaries {
-          id
-          name
-          words
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sentences {
-          id
-          sentence
-          translations
-          track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listAlphabets = /* GraphQL */ `
-  query ListAlphabets(
-    $filter: ModelAlphabetFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listAlphabets(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        symbols
-        sons
-        order
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncDictionaries = /* GraphQL */ `
-  query SyncDictionaries(
-    $filter: ModelDictionaryFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncDictionaries(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        words
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getDictionary = /* GraphQL */ `
-  query GetDictionary($id: ID!) {
-    getDictionary(id: $id) {
-      id
-      name
-      words
-      language {
-        id
-        name
-        description
-        questions {
-          id
-          question_template
-          answers
-          status
-          questionscol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        alphabets {
-          id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        dictionaries {
-          id
-          name
-          words
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sentences {
-          id
-          sentence
-          translations
-          track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listDictionarys = /* GraphQL */ `
-  query ListDictionarys(
-    $filter: ModelDictionaryFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listDictionarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        words
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncSentences = /* GraphQL */ `
-  query SyncSentences(
-    $filter: ModelSentenceFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSentences(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        sentence
-        translations
-        track
-        sentencescol
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getSentence = /* GraphQL */ `
-  query GetSentence($id: ID!) {
-    getSentence(id: $id) {
-      id
-      sentence
-      translations
-      track
-      sentencescol
-      language {
-        id
-        name
-        description
-        questions {
-          id
-          question_template
-          answers
-          status
-          questionscol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        alphabets {
-          id
-          symbols
-          sons
-          order
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        dictionaries {
-          id
-          name
-          words
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        sentences {
-          id
-          sentence
-          translations
-          track
-          sentencescol
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listSentences = /* GraphQL */ `
-  query ListSentences(
-    $filter: ModelSentenceFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSentences(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        sentence
-        translations
-        track
-        sentencescol
-        language {
-          id
-          name
-          description
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        _version
-        _deleted
-        _lastChangedAt
+        owner
       }
       nextToken
       startedAt

@@ -10,7 +10,7 @@ type Suggestion {
 type User
 @model
 @auth(rules: [
-    {allow: owner, operations: [read, update, delete]},
+    {allow: owner},
     {allow: groups, groups: ["Admins"]}
 ]) {
     id: ID!
@@ -20,6 +20,8 @@ type User
     suggestions: [Suggestion]
     tribes: [TribeUser]
     questions:[Question]
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 type TribeUser {
@@ -59,6 +61,8 @@ type Tribe
 type Country {
     id: ID!
     name: String!
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 type Custom {
@@ -119,7 +123,7 @@ type Language {
 type Question
 @model
 @auth(rules: [
-    {allow: owner, operations: [read, update, delete]},
+    {allow: owner},
     {allow: groups, groups: ["Admins"]}
 ]) {
     id: ID!
@@ -159,6 +163,8 @@ type Letter {
     symbol: String!
     order: Int!
     pronociation: File
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 type Dictionary {
@@ -177,6 +183,8 @@ type Word {
     meaning: String!
     picture: File
     usages: [Sentence]
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 type Sentence {
@@ -208,6 +216,8 @@ type History {
     start_at: String
     end_at: String
     legends: [Legend]
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 # ===================================================assets types===================================
@@ -215,12 +225,16 @@ type History {
 type GeoPosition{
     lat: Float!
     long: Float!
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 type File{
     type: FILE_TYPE
     url: String
     size: Float
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
 }
 
 #==========================================enum=====================================
