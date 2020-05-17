@@ -6,6 +6,7 @@ export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser($owner: String) {
     onCreateUser(owner: $owner) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -48,6 +49,7 @@ export const onCreateUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -64,6 +66,7 @@ export const onCreateUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -126,6 +129,7 @@ export const onUpdateUser = /* GraphQL */ `
   subscription OnUpdateUser($owner: String) {
     onUpdateUser(owner: $owner) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -168,6 +172,7 @@ export const onUpdateUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -184,6 +189,7 @@ export const onUpdateUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -246,6 +252,7 @@ export const onDeleteUser = /* GraphQL */ `
   subscription OnDeleteUser($owner: String) {
     onDeleteUser(owner: $owner) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -288,6 +295,7 @@ export const onDeleteUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -304,6 +312,7 @@ export const onDeleteUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -702,6 +711,7 @@ export const onCreateTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1117,6 +1127,7 @@ export const onUpdateTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1532,6 +1543,7 @@ export const onDeleteTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1630,6 +1642,7 @@ export const onCreateQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1678,6 +1691,7 @@ export const onCreateQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -1724,6 +1738,7 @@ export const onCreateQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1780,6 +1795,7 @@ export const onUpdateQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1828,6 +1844,7 @@ export const onUpdateQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -1874,6 +1891,7 @@ export const onUpdateQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1930,6 +1948,7 @@ export const onDeleteQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1978,6 +1997,7 @@ export const onDeleteQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -2024,6 +2044,7 @@ export const onDeleteQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar

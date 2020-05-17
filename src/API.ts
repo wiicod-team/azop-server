@@ -4,6 +4,7 @@
 
 export type CreateUserInput = {
   id?: string | null,
+  cognitoId?: string | null,
   firstName?: string | null,
   lastName?: string | null,
   avatar?: string | null,
@@ -50,6 +51,7 @@ export enum TRIBE_ROLE {
 
 
 export type ModelUserConditionInput = {
+  cognitoId?: ModelStringInput | null,
   firstName?: ModelStringInput | null,
   lastName?: ModelStringInput | null,
   avatar?: ModelStringInput | null,
@@ -150,6 +152,7 @@ export enum QUESTION_STATUS {
 
 export type UpdateUserInput = {
   id: string,
+  cognitoId?: string | null,
   firstName?: string | null,
   lastName?: string | null,
   avatar?: string | null,
@@ -396,6 +399,7 @@ export type AnswerInput = {
 
 export type UserInput = {
   id: string,
+  cognitoId?: string | null,
   firstName?: string | null,
   lastName?: string | null,
   avatar?: string | null,
@@ -474,6 +478,7 @@ export type DeleteQuestionInput = {
 
 export type ModelUserFilterInput = {
   id?: ModelIDInput | null,
+  cognitoId?: ModelStringInput | null,
   firstName?: ModelStringInput | null,
   lastName?: ModelStringInput | null,
   avatar?: ModelStringInput | null,
@@ -518,6 +523,7 @@ export type CreateUserMutation = {
   createUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -566,6 +572,7 @@ export type CreateUserMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -583,6 +590,7 @@ export type CreateUserMutation = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -653,6 +661,7 @@ export type UpdateUserMutation = {
   updateUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -701,6 +710,7 @@ export type UpdateUserMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -718,6 +728,7 @@ export type UpdateUserMutation = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -788,6 +799,7 @@ export type DeleteUserMutation = {
   deleteUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -836,6 +848,7 @@ export type DeleteUserMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -853,6 +866,7 @@ export type DeleteUserMutation = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -1299,6 +1313,7 @@ export type CreateTribeMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -1765,6 +1780,7 @@ export type UpdateTribeMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2231,6 +2247,7 @@ export type DeleteTribeMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2343,6 +2360,7 @@ export type CreateQuestionMutation = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -2395,6 +2413,7 @@ export type CreateQuestionMutation = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -2447,6 +2466,7 @@ export type CreateQuestionMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2511,6 +2531,7 @@ export type UpdateQuestionMutation = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -2563,6 +2584,7 @@ export type UpdateQuestionMutation = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -2615,6 +2637,7 @@ export type UpdateQuestionMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2679,6 +2702,7 @@ export type DeleteQuestionMutation = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -2731,6 +2755,7 @@ export type DeleteQuestionMutation = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -2783,6 +2808,7 @@ export type DeleteQuestionMutation = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2829,6 +2855,7 @@ export type SyncUsersQuery = {
     items:  Array< {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -2881,6 +2908,7 @@ export type SyncUsersQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2918,6 +2946,7 @@ export type GetUserQuery = {
   getUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -2966,6 +2995,7 @@ export type GetUserQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -2983,6 +3013,7 @@ export type GetUserQuery = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -3056,6 +3087,7 @@ export type ListUsersQuery = {
     items:  Array< {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -3108,6 +3140,7 @@ export type ListUsersQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -3800,6 +3833,7 @@ export type GetTribeQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4194,6 +4228,7 @@ export type SyncQuestionsQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4211,6 +4246,7 @@ export type SyncQuestionsQuery = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -4298,6 +4334,7 @@ export type GetQuestionQuery = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -4350,6 +4387,7 @@ export type GetQuestionQuery = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -4402,6 +4440,7 @@ export type GetQuestionQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4469,6 +4508,7 @@ export type ListQuestionsQuery = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4486,6 +4526,7 @@ export type ListQuestionsQuery = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -4551,6 +4592,7 @@ export type OnCreateUserSubscription = {
   onCreateUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -4599,6 +4641,7 @@ export type OnCreateUserSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4616,6 +4659,7 @@ export type OnCreateUserSubscription = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -4685,6 +4729,7 @@ export type OnUpdateUserSubscription = {
   onUpdateUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -4733,6 +4778,7 @@ export type OnUpdateUserSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4750,6 +4796,7 @@ export type OnUpdateUserSubscription = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -4819,6 +4866,7 @@ export type OnDeleteUserSubscription = {
   onDeleteUser:  {
     __typename: "User",
     id: string,
+    cognitoId: string | null,
     firstName: string | null,
     lastName: string | null,
     avatar: string | null,
@@ -4867,6 +4915,7 @@ export type OnDeleteUserSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -4884,6 +4933,7 @@ export type OnDeleteUserSubscription = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -5325,6 +5375,7 @@ export type OnCreateTribeSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -5786,6 +5837,7 @@ export type OnUpdateTribeSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -6247,6 +6299,7 @@ export type OnDeleteTribeSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -6358,6 +6411,7 @@ export type OnCreateQuestionSubscription = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -6410,6 +6464,7 @@ export type OnCreateQuestionSubscription = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -6462,6 +6517,7 @@ export type OnCreateQuestionSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -6525,6 +6581,7 @@ export type OnUpdateQuestionSubscription = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -6577,6 +6634,7 @@ export type OnUpdateQuestionSubscription = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -6629,6 +6687,7 @@ export type OnUpdateQuestionSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,
@@ -6692,6 +6751,7 @@ export type OnDeleteQuestionSubscription = {
       user:  {
         __typename: "User",
         id: string,
+        cognitoId: string | null,
         firstName: string | null,
         lastName: string | null,
         avatar: string | null,
@@ -6744,6 +6804,7 @@ export type OnDeleteQuestionSubscription = {
     user:  {
       __typename: "User",
       id: string,
+      cognitoId: string | null,
       firstName: string | null,
       lastName: string | null,
       avatar: string | null,
@@ -6796,6 +6857,7 @@ export type OnDeleteQuestionSubscription = {
         user:  {
           __typename: "User",
           id: string,
+          cognitoId: string | null,
           firstName: string | null,
           lastName: string | null,
           avatar: string | null,

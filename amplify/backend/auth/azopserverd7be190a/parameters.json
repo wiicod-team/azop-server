@@ -1,6 +1,6 @@
 {
     "identityPoolName": "azopserverd7be190a_identitypool_d7be190a",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "azopsef090d520",
     "userPoolName": "azopserverd7be190a_userpool_d7be190a",
     "autoVerifiedAttributes": [

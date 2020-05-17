@@ -9,6 +9,7 @@ export const createUser = /* GraphQL */ `
   ) {
     createUser(input: $input, condition: $condition) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -51,6 +52,7 @@ export const createUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -67,6 +69,7 @@ export const createUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -132,6 +135,7 @@ export const updateUser = /* GraphQL */ `
   ) {
     updateUser(input: $input, condition: $condition) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -174,6 +178,7 @@ export const updateUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -190,6 +195,7 @@ export const updateUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -255,6 +261,7 @@ export const deleteUser = /* GraphQL */ `
   ) {
     deleteUser(input: $input, condition: $condition) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -297,6 +304,7 @@ export const deleteUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -313,6 +321,7 @@ export const deleteUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -714,6 +723,7 @@ export const createTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1132,6 +1142,7 @@ export const updateTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1550,6 +1561,7 @@ export const deleteTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1651,6 +1663,7 @@ export const createQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1699,6 +1712,7 @@ export const createQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -1745,6 +1759,7 @@ export const createQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1804,6 +1819,7 @@ export const updateQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1852,6 +1868,7 @@ export const updateQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -1898,6 +1915,7 @@ export const updateQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1957,6 +1975,7 @@ export const deleteQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -2005,6 +2024,7 @@ export const deleteQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -2051,6 +2071,7 @@ export const deleteQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar

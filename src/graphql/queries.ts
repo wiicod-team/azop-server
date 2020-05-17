@@ -17,6 +17,7 @@ export const syncUsers = /* GraphQL */ `
     ) {
       items {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -63,6 +64,7 @@ export const syncUsers = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -96,6 +98,7 @@ export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
       id
+      cognitoId
       firstName
       lastName
       avatar
@@ -138,6 +141,7 @@ export const getUser = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -154,6 +158,7 @@ export const getUser = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -221,6 +226,7 @@ export const listUsers = /* GraphQL */ `
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -267,6 +273,7 @@ export const listUsers = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -891,6 +898,7 @@ export const getTribe = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1249,6 +1257,7 @@ export const syncQuestions = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1265,6 +1274,7 @@ export const syncQuestions = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1342,6 +1352,7 @@ export const getQuestion = /* GraphQL */ `
         vote
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar
@@ -1390,6 +1401,7 @@ export const getQuestion = /* GraphQL */ `
       status
       user {
         id
+        cognitoId
         firstName
         lastName
         avatar
@@ -1436,6 +1448,7 @@ export const getQuestion = /* GraphQL */ `
           status
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1497,6 +1510,7 @@ export const listQuestions = /* GraphQL */ `
           vote
           user {
             id
+            cognitoId
             firstName
             lastName
             avatar
@@ -1513,6 +1527,7 @@ export const listQuestions = /* GraphQL */ `
         status
         user {
           id
+          cognitoId
           firstName
           lastName
           avatar

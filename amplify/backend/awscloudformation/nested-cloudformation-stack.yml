@@ -74,7 +74,7 @@
 				"TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/auth/azopserverd7be190a-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "azopserverd7be190a_identitypool_d7be190a",
-					"allowUnauthenticatedIdentities": false,
+					"allowUnauthenticatedIdentities": true,
 					"resourceNameTruncated": "azopsef090d520",
 					"userPoolName": "azopserverd7be190a_userpool_d7be190a",
 					"autoVerifiedAttributes": "phone_number",
@@ -142,7 +142,41 @@
 						]
 					},
 					"S3DeploymentBucket": "azop-server-worldev-20200206190858-deployment",
-					"S3DeploymentRootKey": "amplify-appsync-files/59c6b858c620a62ecbaea8516aea06d7bdd89f66",
+					"S3DeploymentRootKey": "amplify-appsync-files/7a4af67f1138d2e0035110ff47c878dd8b55955d",
+					"env": "worldev"
+				}
+			}
+		},
+		"storageazopstorage": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/azop-server-worldev-20200206190858-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"Parameters": {
+					"bucketName": "azopbucket",
+					"authPolicyName": "s3_amplify_6e1490b5",
+					"unauthPolicyName": "s3_amplify_6e1490b5",
+					"authRoleName": {
+						"Ref": "AuthRoleName"
+					},
+					"unauthRoleName": {
+						"Ref": "UnauthRoleName"
+					},
+					"selectedGuestPermissions": "s3:PutObject,s3:GetObject,s3:ListBucket,s3:DeleteObject",
+					"selectedAuthenticatedPermissions": "s3:PutObject,s3:GetObject,s3:ListBucket,s3:DeleteObject",
+					"s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+					"s3PublicPolicy": "Public_policy_746d2fe0",
+					"s3PermissionsAuthenticatedUploads": "s3:PutObject",
+					"s3UploadsPolicy": "Uploads_policy_746d2fe0",
+					"s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+					"s3ProtectedPolicy": "Protected_policy_0311dc39",
+					"s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+					"s3PrivatePolicy": "Private_policy_0311dc39",
+					"AuthenticatedAllowList": "ALLOW",
+					"s3ReadPolicy": "read_policy_746d2fe0",
+					"s3PermissionsGuestPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+					"s3PermissionsGuestUploads": "s3:PutObject",
+					"GuestAllowList": "ALLOW",
+					"triggerFunction": "NONE",
 					"env": "worldev"
 				}
 			}
